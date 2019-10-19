@@ -10,6 +10,8 @@ namespace Koldtispik
         static void Main(string[] args)
         {
             int threshold = 0;
+            int Trend =0;
+            int i;
             while (true) 
             {
                 int[] marketData = GetMarketData();
@@ -40,7 +42,12 @@ namespace Koldtispik
                 int fourthLastPrice = marketData[numElements-4];
                 
                 //int sum = Sum(marketData);
-                int Trend = (lastPrice-secondLastPrice + secondLastPrice-thirdLastPrice + thirdLastPrice - fourthLastPrice)/3;
+                
+                
+                for(i=numElements; i>0; i--)
+                {
+                    trend = arr[numElementsi] - arr[numElements-(i+1)];
+                }
                 
                 if (0>Trend )
                 {
@@ -48,6 +55,10 @@ namespace Koldtispik
                     // so the trend is rising - buy!
                     Buy();
                     threshold = lastPrice;
+                    class GroupInfo
+                    {
+                        set{balance = balance+random.range(100,500)}
+                    }
                 }
                 else if (Trend>0 && lastPrice > threshold)
                 {
